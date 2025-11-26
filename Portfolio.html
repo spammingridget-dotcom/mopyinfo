@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Portfolio – Roblox Scripting</title>
+
+<style>
+    body {
+        margin: 0;
+        font-family: "Segoe UI", sans-serif;
+        background: #0d0d0d;
+        color: white;
+    }
+
+    header {
+        width: 100%;
+        padding: 40px 0;
+        text-align: center;
+        background: linear-gradient(120deg, #00aaff, #0066ff);
+        box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+    }
+
+    header h1 {
+        font-size: 48px;
+        margin: 0;
+        font-weight: 900;
+        letter-spacing: 2px;
+    }
+
+    .section {
+        max-width: 1000px;
+        margin: 60px auto;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .portfolio-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 25px;
+        margin-top: 40px;
+    }
+
+    .portfolio-card {
+        background: #111;
+        padding: 20px;
+        border-radius: 14px;
+        border: 2px solid #00aaff33;
+        transition: 0.3s;
+        box-shadow: 0 0 10px #000;
+    }
+
+    .portfolio-card:hover {
+        transform: translateY(-6px);
+        border-color: #00aaff;
+        box-shadow: 0 0 20px #00aaff55;
+    }
+
+    .portfolio-card img {
+        width: 100%;
+        height: 160px;
+        object-fit: cover;
+        border-radius: 10px;
+        margin-bottom: 15px;
+    }
+
+    .portfolio-card h3 {
+        margin: 10px 0 5px;
+        font-size: 22px;
+        color: #00aaff;
+    }
+
+    .portfolio-card p {
+        font-size: 15px;
+        color: #ccc;
+        margin-bottom: 15px;
+    }
+
+    .portfolio-btn {
+        display: inline-block;
+        background: #00CAFF;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: bold;
+        transition: 0.2s;
+    }
+
+    .portfolio-btn:hover {
+        background: #0099dd;
+    }
+
+    footer {
+        text-align: center;
+        padding: 30px;
+        margin-top: 60px;
+        color: #888;
+        font-size: 14px;
+    }
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>Portfolio</h1>
+    <p>Some of my past scripting work</p>
+</header>
+
+<section class="section">
+    <h2>Completed Projects</h2>
+
+    <div class="portfolio-grid">
+
+        <!-- ITEM 1 -->
+        <div class="portfolio-card">
+            <img src="IMAGE1.png" alt="Portfolio Image 1">
+            <h3>Momentum Games</h3>
+            <p>I'm Ownership Team And Main Scripter makin things like the main round system, heart attacks, and the core gameplay. (38K members).</p>
+            <a class="portfolio-btn" href="https://www.roblox.com/communities/35673180/Momentum-Games-Official#!/about">View Project</a>
+        </div>
+
+        <!-- ITEM 2 -->
+        <div class="portfolio-card">
+            <img src="IMAGE2.png" alt="Portfolio Image 2">
+            <h3>CrystalForge Studio</h3>
+            <p>Mainly Participating In Find A Brainrot (now sold) and Steal A Accesory.</p>
+            <a class="portfolio-btn" href="https://www.roblox.com/communities/33321718/CrystalForge-Studio#!/about">View Project</a>
+        </div>
+
+        <!-- ITEM 3 -->
+        <div class="portfolio-card">
+            <img src="IMAGE3.png" alt="Portfolio Image 3">
+            <h3>Phone System Completely Made By Me</h3>
+            <p>it's a Phone System in roblox i made as a challenge for myself in 1 hour and it turned out really great, press C to open and press the Button on the right to power on .</p>
+            <a class="portfolio-btn" href="https://www.roblox.com/games/111485566738107/Phone">View Project</a>
+        </div>
+
+        <!-- ITEM 4 -->
+        <div class="portfolio-card">
+            <img src="IMAGE4.png" alt="Portfolio Image 4">
+            <h3>Various Small Projects On My main</h3>
+            <p>These are BADD but still learning expierences from long ago, worked at 3 studios 1 not listed because not working there anymore.</p>
+            <a class="portfolio-btn" href="https://www.roblox.com/users/4248642418/profile">View Project</a>
+        </div>
+
+        <!-- ITEM 5 -->
+        <div class="portfolio-card">
+            <img src="Banner" alt="Portfolio Image 5">
+            <h3>What I'm Heading For</h3>
+            <p>What i’m heading for:
+– im heading for going into bigger projects.
+– i’ve mostly worked alone. i want to join teams with cool people.
+– working with a audience that loves my projects
+– starting my own BIG developement studio ( started a small one, not too BIG yet 😅 )</p>
+            <a class="portfolio-btn" href="https://creations.mtdv.me/giveaways/mopy565328_9">View Project</a>
+        </div>
+
+    </div>
+
+</section>
+
+<footer>
+    © mopy565329 — Roblox Scripting Portfolio
+</footer>
+
+</body>
+</html>
