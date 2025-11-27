@@ -4,153 +4,211 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Mopy565329 Scripting Services</title>
+
 <style>
+    /* GLOBAL */
     body {
         margin: 0;
-        font-family: "Segoe UI", sans-serif;
-        background: #0d0d0d;
-        color: white;
+        font-family: "JetBrains Mono", monospace;
+        background: #0a0a0a url('https://raw.githubusercontent.com/mopy565329/randomhosting/main/codebg.png');
+        background-size: cover;
+        background-attachment: fixed;
+        color: #e8e8e8;
     }
 
+    /* HEADER - Terminal Style */
     header {
-        width: 100%;
-        padding: 40px 0;
+        padding: 50px 0;
         text-align: center;
-        background: linear-gradient(120deg, #00aaff, #0066ff);
-        box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+        background: rgba(0, 0, 0, 0.7);
+        backdrop-filter: blur(10px);
+        border-bottom: 2px solid #00c3ff;
+        box-shadow: 0 0 25px #009dff66;
     }
 
     header h1 {
-        font-size: 48px;
+        font-size: 46px;
         margin: 0;
-        font-weight: 900;
-        letter-spacing: 2px;
+        font-weight: 800;
+        color: #00c3ff;
+        text-shadow: 0 0 12px #009dff;
     }
 
     header p {
+        opacity: 0.85;
         font-size: 18px;
-        margin-top: 10px;
-        opacity: 0.9;
+        margin-top: 8px;
+        color: #8cd8ff;
     }
 
+    /* CODE-SECTIONS */
     .section {
-        max-width: 900px;
-        margin: 60px auto;
-        padding: 20px;
-        text-align: center;
+        max-width: 1100px;
+        margin: 70px auto;
+        padding: 20px 30px;
+        background: rgba(0, 0, 0, 0.55);
+        border: 1px solid #00c3ff33;
+        border-radius: 14px;
+        backdrop-filter: blur(8px);
+        box-shadow: 0 0 25px #00c3ff22;
+        animation: fadeIn 0.6s ease-out;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
     }
 
     .section h2 {
-        font-size: 36px;
-        margin-bottom: 15px;
-        color: #00aaff;
+        font-size: 32px;
+        color: #00d4ff;
+        margin-bottom: 20px;
+        text-shadow: 0 0 10px #009aff;
     }
 
+    .section p {
+        font-size: 17px;
+        opacity: 0.9;
+        line-height: 1.5;
+    }
+
+    /* CODE-LIKE CARDS */
     .services {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 25px;
-        margin-top: 30px;
+        grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+        gap: 35px;
+        margin-top: 35px;
     }
 
     .card {
-        background: #111;
+        background: rgba(15, 15, 15, 0.8);
+        border: 1px solid #00aaff33;
+        border-radius: 12px;
         padding: 25px;
-        border-radius: 14px;
-        border: 2px solid #00aaff33;
+        color: #e0e0e0;
         transition: 0.3s;
+        position: relative;
+        overflow: hidden;
+        box-shadow: inset 0 0 20px #00c3ff22;
+    }
+
+    /* animated border glow */
+    .card::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: inherit;
+        padding: 2px;
+        background: linear-gradient(135deg, #00d4ff, #0066ff);
+        -webkit-mask:
+            linear-gradient(#fff 0 0) content-box,
+            linear-gradient(#fff 0 0);
+        -webkit-mask-composite: xor;
+                mask-composite: exclude;
+        opacity: 0;
+        transition: 0.35s;
+    }
+
+    .card:hover::before {
+        opacity: 1;
     }
 
     .card:hover {
-        transform: translateY(-6px);
-        border-color: #00aaff;
-        box-shadow: 0 0 20px #00aaff44;
+        transform: translateY(-8px);
+        box-shadow: 0 0 25px #009dff55;
     }
 
-    .price {
-        font-size: 22px;
-        font-weight: bold;
-        margin-top: 10px;
-        color: #00ffaa;
+    .card h3 {
+        color: #00c3ff;
+        margin-bottom: 10px;
+        font-size: 24px;
+        text-shadow: 0 0 10px #009aff;
+    }
+
+    .card ul {
+        list-style: none;
+        padding-left: 0;
+        margin-top: 15px;
+    }
+
+    .card ul li {
+        margin: 6px 0;
+        color: #8cd8ff;
     }
 
     .payment {
         margin-top: 40px;
-        font-size: 20px;
-        color: #00ffaa;
+        color: #00ffcc;
     }
 
+    /* BUTTONS */
+    .btn {
+        display: inline-block;
+        margin: 10px 8px;
+        padding: 14px 28px;
+        background: #00c3ff;
+        color: black;
+        font-size: 18px;
+        font-weight: bold;
+        text-decoration: none;
+        border-radius: 10px;
+        transition: 0.25s;
+        box-shadow: 0 0 15px #00c3ff88;
+    }
+
+    .btn:hover {
+        background: #0099dd;
+        box-shadow: 0 0 25px #00c3ff;
+    }
+
+    /* FOOTER */
     footer {
         text-align: center;
-        padding: 30px;
-        margin-top: 60px;
+        padding: 40px;
         color: #888;
-        font-size: 14px;
+        margin-top: 80px;
     }
 </style>
 </head>
+
 <body>
 
 <header>
-    
     <h1>Mopy565329 Roblox Scripting Services</h1>
     <p>Professional Roblox Developer • 7+ Years Experience</p>
-    <p>( user on Roblox : mopy565329 ) </p>
+    <p>( Roblox User: mopy565329 )</p>
 </header>
 
 <section class="section">
     <h2>Pricing & Subscription Model</h2>
-    <p>My services operate on a yearly subscription basis. For an entire year, you receive continuous updates, support, fixes, and full usage of your chosen package.</p>
+    <p>For an entire year, you receive continuous updates, fixes, and access to your chosen package.</p>
 
     <div class="services">
         <div class="card">
             <h3>Custom Scripting Systems</h3>
-            <p>Full-featured systems tailored to your game.</p>
+            <p>Full-featured, scalable gameplay systems made from scratch.</p>
             <ul>
-                <li>Robux: 35,000 – Infinite</li>
-                <li>EUR/USD: $100 – Infinite</li>
+                <li>Robux: <span style="color:#00ffcc">35,000 → Infinite</span></li>
+                <li>EUR/USD: <span style="color:#00ffcc">$100 → Infinite</span></li>
             </ul>
         </div>
 
         <div class="card">
             <h3>Specialized Script Editing</h3>
-            <p>Ever had that guy that completely messed up everything ?? XD , well, i can fix it, and i do it at cheaper rates rather then making it custom! </p>
+            <p>Fixing broken systems & optimizing scripts at a lower price.</p>
             <ul>
-                <li>Robux: 17,000 – Infinite</li>
-                <li>EUR/USD: $75 – Infinite</li>
+                <li>Robux: <span style="color:#00ffcc">17,000 → Infinite</span></li>
+                <li>EUR/USD: <span style="color:#00ffcc">$75 → Infinite</span></li>
             </ul>
         </div>
     </div>
 
     <h2>Commission Work</h2>
-    <p>I offer individual commissions, appraised one by one depending on complexity and workload.</p>
-    <p><strong>Payment structure:</strong> 50% upfront, 50% after completion.</p>
-<a href="Apply.html" style="
-    display:inline-block;
-    background:#00CAFF;
-    color:white;
-    padding:12px 22px;
-    border-radius:8px;
-    text-decoration:none;
-    font-size:18px;
-    font-weight:bold;
-">
-    Apply Now
-</a>
-    <a href="Portfolio.html" style="
-    display:inline-block;
-    background:#00f7ff;
-    color:white;
-    padding:12px 22px;
-    border-radius:8px;
-    text-decoration:none;
-    font-size:18px;
-    font-weight:bold;
-">
-    Portfolio
-</a>
+    <p>I appraise one-time commissions individually based on complexity.</p>
+    <p><strong>Payment:</strong> 50% upfront, 50% after completion.</p>
 
-
+    <a class="btn" href="Apply.html">Apply Now</a>
+    <a class="btn" href="Portfolio.html">Portfolio</a>
 </section>
 
 <footer>
@@ -159,4 +217,3 @@
 
 </body>
 </html>
-
