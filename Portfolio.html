@@ -1,135 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Portfolio – Roblox Scripting</title>
 
 <style>
     body {
         margin: 0;
-        font-family: "Consolas", "Segoe UI", sans-serif;
+        font-family: Consolas, "Segoe UI", sans-serif;
         background: #020202 url('https://raw.githubusercontent.com/mopy565329/randomhosting/main/codebg.png');
         background-size: cover;
         background-attachment: fixed;
         color: white;
     }
 
-    /* HEADER */
     header {
         width: 100%;
         padding: 55px 0;
         text-align: center;
         background: linear-gradient(135deg, #0a0f2e, #001f3f);
-        border-bottom: 2px solid #00eaff44;
+        border-bottom: 1px solid #00eaff55;
         box-shadow: 0 0 25px #00eaff44;
     }
 
     header h1 {
         font-size: 50px;
         margin: 0;
-        font-weight: 900;
-        letter-spacing: 3px;
         color: #00eaff;
         text-shadow: 0 0 18px #00eaff;
+        font-weight: 900;
+        letter-spacing: 3px;
     }
 
-    header p {
-        font-size: 19px;
-        margin-top: 12px;
-        opacity: 0.9;
+    .portfolio-item {
+        width: 90%;
+        max-width: 1500px;
+        margin: 90px auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 30px;
+        position: relative;
     }
 
-    /* PAGE SECTION */
-    .section {
-        max-width: 1200px;
-        margin: 80px auto;
-        padding: 25px;
-        text-align: center;
-        background: rgba(0,0,0,0.48);
-        border-radius: 20px;
-        border: 1px solid #00eaff33;
-        box-shadow: 0 0 25px #00eaff22;
+    /* LEFT IMAGE BOX */
+    .image-box {
+        width: 45%;
+        height: 330px;
+        background: #5a11ff;
+        border-radius: 25px;
+        box-shadow: 0 0 25px #7f2affaa;
+        overflow: hidden;
+        border: 1px solid #a46bff66;
     }
 
-    .section h2 {
-        font-size: 40px;
-        margin-bottom: 15px;
-        color: #00eaff;
-        text-shadow: 0 0 12px #00eaff;
-    }
-
-    /* GRID */
-    .grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 35px;
-        margin-top: 40px;
-    }
-
-    /* CARD */
-    .card {
-        background: rgba(0,0,0,0.7);
-        border-radius: 18px;
-        padding: 20px;
-        border: 2px solid #00aaff44;
-        box-shadow: 0 0 18px #00aaff22;
-        transition: 0.25s;
-        backdrop-filter: blur(5px);
-    }
-
-    .card:hover {
-        transform: translateY(-8px);
-        border-color: #00eaff;
-        box-shadow: 0 0 35px #00eaff88;
-    }
-
-    .card img {
+    .image-box img {
         width: 100%;
-        height: 180px;
-        border-radius: 12px;
+        height: 100%;
         object-fit: cover;
-        margin-bottom: 15px;
-        border: 1px solid #00eaff44;
     }
 
-    .card h3 {
-        font-size: 24px;
-        margin: 10px 0;
-        color: #00eaff;
+    /* RIGHT DESCRIPTION BOX */
+    .desc-box {
+        width: 55%;
+        height: 330px;
+        background: #4ef1ff;
+        border-radius: 25px;
+        padding: 35px;
+        color: black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 20px;
+        text-align: center;
+        box-shadow: 0 0 25px #00eaff88;
+    }
+
+    /* STUDIO NAME */
+    .studio-tag {
+        position: absolute;
+        right: 30px;
+        bottom: -50px;
+        padding: 12px 25px;
+        background: #d66bff;
+        border-radius: 50px;
         font-weight: bold;
-        text-shadow: 0 0 10px #00eaff;
+        text-align: center;
+        color: black;
+        box-shadow: 0 0 12px #d66bffcc;
     }
 
-    .card p {
-        font-size: 15px;
-        color: #cde7ff;
-        margin-bottom: 18px;
-    }
-
-    /* BUTTON */
-    .btn {
-        display: inline-block;
+    /* BUTTON UNDER STUDIO TAG */
+    .project-btn {
+        position: absolute;
+        right: 30px;
+        bottom: -98px;
+        padding: 10px 22px;
         background: #00eaff;
         color: black;
+        border-radius: 10px;
         font-weight: bold;
-        padding: 10px 22px;
-        border-radius: 8px;
         text-decoration: none;
+        box-shadow: 0 0 18px #00eaff;
         transition: 0.2s;
     }
 
-    .btn:hover {
-        background: #00c6dd;
-        box-shadow: 0 0 18px #00eaff;
+    .project-btn:hover {
+        background: #00c8d6;
+        box-shadow: 0 0 25px #00eaff;
     }
 
     footer {
         text-align: center;
-        padding: 35px;
-        margin-top: 60px;
-        font-size: 15px;
-        opacity: 0.75;
+        padding: 40px;
+        margin-top: 120px;
+        opacity: 0.7;
+        font-size: 16px;
     }
 </style>
 </head>
@@ -138,56 +125,67 @@
 
 <header>
     <h1>My Scripting Portfolio</h1>
-    <p>A showcase of my major work & accomplishments</p>
 </header>
 
-<section class="section">
-    <h2>Completed Projects</h2>
-
-    <div class="grid">
-
-        <!-- CARD 1 -->
-        <div class="card">
-            <img src="4-859914c6.png">
-            <h3>Momentum Games</h3>
-            <p>Main Scripter + Ownership Team. Systems: round system, heart attacks, gameplay core. (38K members)</p>
-            <a class="btn" href="https://www.roblox.com/communities/35673180/Momentum-Games-Official#!/about">View Project</a>
-        </div>
-
-        <!-- CARD 2 -->
-        <div class="card">
-            <img src="3-859914c6.png">
-            <h3>CrystalForge Studio</h3>
-            <p>Scripting for Find A Brainrot and Steal An Accessory. Function systems & polish.</p>
-            <a class="btn" href="https://www.roblox.com/communities/33321718/CrystalForge-Studio#!/about">View Project</a>
-        </div>
-
-        <!-- CARD 3 -->
-        <div class="card">
-            <img src="1-859914c6.png">
-            <h3>Phone System</h3>
-            <p>Full phone UI system built in 1 hour. Press C to open, use on-screen power button.</p>
-            <a class="btn" href="https://www.roblox.com/games/111485566738107/Phone">View Project</a>
-        </div>
-
-        <!-- CARD 4 -->
-        <div class="card">
-            <img src="1-859914c6.png">
-            <h3>Older Projects</h3>
-            <p>Various experiments & early work. Includes multiple studio contributions.</p>
-            <a class="btn" href="https://www.roblox.com/users/4248642418/profile">View Project</a>
-        </div>
-
-        <!-- CARD 5 -->
-        <div class="card">
-            <img src="IMAGE5.jpg">
-            <h3>Future Goals</h3>
-            <p>Moving into higher-scale projects, bigger teams, and building a full development studio.</p>
-            <a class="btn" href="https://creations.mtdv.me/giveaways/mopy565328_9">View Project</a>
-        </div>
-
+<!-- ITEM 1 -->
+<div class="portfolio-item">
+    <div class="image-box">
+        <img src="4-859914c6.png">
     </div>
-</section>
+    <div class="desc-box">
+        I'm Ownership Team And Main Scripter making round systems, heart attacks & core gameplay. (38K members)
+    </div>
+    <div class="studio-tag">Momentum Games</div>
+    <a class="project-btn" href="https://www.roblox.com/communities/35673180/Momentum-Games-Official#!/about">View Project</a>
+</div>
+
+<!-- ITEM 2 -->
+<div class="portfolio-item">
+    <div class="image-box">
+        <img src="3-859914c6.png">
+    </div>
+    <div class="desc-box">
+        Worked on Find A Brainrot & Steal An Accessory. Scripting, logic structures & systems.
+    </div>
+    <div class="studio-tag">CrystalForge Studio</div>
+    <a class="project-btn" href="https://www.roblox.com/communities/33321718/CrystalForge-Studio#!/about">View Project</a>
+</div>
+
+<!-- ITEM 3 -->
+<div class="portfolio-item">
+    <div class="image-box">
+        <img src="1-859914c6.png">
+    </div>
+    <div class="desc-box">
+        Phone System made in 1 hour as a challenge. Press C to open, power button to turn on.
+    </div>
+    <div class="studio-tag">Phone System</div>
+    <a class="project-btn" href="https://www.roblox.com/games/111485566738107/Phone">View Project</a>
+</div>
+
+<!-- ITEM 4 -->
+<div class="portfolio-item">
+    <div class="image-box">
+        <img src="1-859914c6.png">
+    </div>
+    <div class="desc-box">
+        Older experimenting projects & early studio work. Learning foundations.
+    </div>
+    <div class="studio-tag">Misc Projects</div>
+    <a class="project-btn" href="https://www.roblox.com/users/4248642418/profile">View Project</a>
+</div>
+
+<!-- ITEM 5 -->
+<div class="portfolio-item">
+    <div class="image-box">
+        <img src="IMAGE5.jpg">
+    </div>
+    <div class="desc-box">
+        Heading toward bigger projects, team development & building my own studio.
+    </div>
+    <div class="studio-tag">Future Goals</div>
+    <a class="project-btn" href="https://creations.mtdv.me/giveaways/mopy565328_9">View Project</a>
+</div>
 
 <footer>
     © mopy565329 — Roblox Scripting Portfolio
