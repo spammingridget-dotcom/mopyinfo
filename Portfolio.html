@@ -13,27 +13,28 @@
         background-size: cover;
         background-attachment: fixed;
         color: white;
-        scroll-behavior: smooth;
     }
 
     header {
         width: 100%;
-        padding: 60px 0 40px 0;
+        padding: 40px 0;
         text-align: center;
-        background: linear-gradient(135deg, #7a00ff, #5200ff, #3800c9);
-        box-shadow: 0 6px 30px rgba(0,0,0,0.6);
-        border-bottom: 3px solid #9d5bff;
+        background: rgba(0, 0, 0, 0.4);
+        backdrop-filter: blur(10px);
+        border-bottom: 2px solid #7a00ff;
+        box-shadow: 0 0 20px #7a00ff88;
     }
 
     header h1 {
-        font-size: 55px;
+        font-size: 48px;
         margin: 0;
         font-weight: 900;
-        letter-spacing: 3px;
-        text-shadow: 0 0 15px #b472ff;
+        letter-spacing: 2px;
+        color: #c28cff;
+        text-shadow: 0 0 15px #7a00ff;
     }
 
-    /* ITEM CONTAINER */
+    /* MAIN ITEM CONTAINER */
     .portfolio-item {
         width: 90%;
         max-width: 1500px;
@@ -43,112 +44,94 @@
         align-items: center;
         gap: 40px;
         position: relative;
-        padding-bottom: 80px;
+        backdrop-filter: blur(20px);
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 25px;
+        padding: 40px;
+        box-shadow: 0 0 30px #7a00ff44, inset 0 0 20px #00eaff33;
+        border: 2px solid rgba(255,255,255,0.1);
     }
 
-    /* PURPLE IMAGE BOX */
+    /* Image Box */
     .image-box {
         width: 45%;
-        height: 340px;
-        background: #5a11ff;
-        border-radius: 28px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        height: 330px;
+        border-radius: 18px;
         overflow: hidden;
-        box-shadow: 0 0 40px #5a11ff99;
-        border: 2px solid #b791ff;
+        box-shadow: 0 0 25px #7a00ff88;
+        border: 2px solid #7a00ff66;
     }
 
     .image-box img {
         width: 100%;
         height: 100%;
         object-fit: cover;
-        filter: brightness(0.9);
     }
 
-    /* CYAN DESCRIPTION BOX */
+    /* Description Box */
     .desc-box {
         width: 55%;
-        height: 340px;
-        background: #33e6ff;
-        border-radius: 28px;
-        padding: 40px;
-        font-size: 22px;
-        color: black;
+        height: 330px;
         display: flex;
         justify-content: center;
         align-items: center;
-        box-shadow: 0 0 40px #00eaff88;
-        border: 2px solid #94f9ff;
+        padding: 35px;
         text-align: center;
-        line-height: 1.5;
+        background: rgba(0, 0, 0, 0.45);
+        border-radius: 18px;
+        box-shadow: inset 0 0 20px #00eaff66;
+        border: 2px solid #00eaff55;
+        font-size: 20px;
+        line-height: 1.4;
     }
 
-    /* PENTAGON LABEL */
-    .pentagon {
-        position: absolute;
-        top: -70px;
-        right: 20px;
-        width: 200px;
-        background: white;
-        padding: 12px 0;
-        text-align: center;
-        font-size: 18px;
+    /* Studio Tag */
+    .studio-tag {
+        margin-top: 25px;
+        padding: 10px 25px;
+        background: #ffb6ff;
         color: black;
-        font-weight: bold;
-        clip-path: polygon(50% 0%, 100% 30%, 85% 100%, 15% 100%, 0% 30%);
-        box-shadow: 0 5px 20px #00000080;
-        border: 2px solid black;
-    }
-
-    /* STUDIO NAME + BUTTON AREA */
-    .studio-box {
-        position: absolute;
-        right: 20px;
-        bottom: -75px;
-        background: #d66bff;
         border-radius: 50px;
-        padding: 15px 30px;
-        text-align: center;
-        color: black;
+        display: inline-block;
         font-weight: bold;
-        box-shadow: 0 0 20px #c24dff;
+        font-size: 17px;
+        box-shadow: 0 0 15px #ff00ff88;
     }
 
-    /* BUTTON CONTAINER UNDER STUDIO NAME */
-    .button-area {
-        margin-top: 12px;
-        display: flex;
-        justify-content: center;
-        gap: 12px;
-    }
-
-    .button-area a {
-        text-decoration: none;
-        padding: 10px 16px;
-        border-radius: 10px;
-        font-size: 15px;
-        font-weight: 700;
-        background: #ffffff;
+    /* Buttons */
+    .portfolio-btn {
+        display: inline-block;
+        margin-top: 10px;
+        background: #00CAFF;
         color: black;
-        border: 2px solid #b55fff;
-        transition: 0.15s;
+        padding: 12px 25px;
+        border-radius: 10px;
+        font-weight: bold;
+        font-size: 18px;
+        text-decoration: none;
+        transition: 0.2s;
+        box-shadow: 0 0 15px #00eaffaa;
     }
 
-    .button-area a:hover {
-        background: #b55fff;
-        color: white;
-        transform: scale(1.05);
+    .portfolio-btn:hover {
+        background: #0099dd;
+        box-shadow: 0 0 20px #00eaff;
+    }
+
+    /* Wrapper for tag + button */
+    .below-box {
+        width: 55%;
+        margin-left: auto;
+        margin-right: 0;
+        text-align: center;
+        margin-top: 15px;
     }
 
     footer {
         padding: 50px;
-        margin-top: 150px;
+        margin-top: 100px;
         text-align: center;
-        color: #aaa;
-        font-size: 18px;
-        border-top: 2px solid #4a4a4a;
+        color: #777;
     }
 </style>
 </head>
@@ -161,8 +144,6 @@
 
 <!-- ==================== ITEM 1 ====================== -->
 <div class="portfolio-item">
-    <div class="pentagon">MomenTum Games → Final Boss 😅</div>
-
     <div class="image-box">
         <img src="4-859914c6.png">
     </div>
@@ -171,18 +152,14 @@
         I'm Ownership Team And Main Scripter making round systems, heart attacks, and core gameplay (38K members).
     </div>
 
-    <div class="studio-box">
-        Momentum Games
-        <div class="button-area">
-            <a href="https://www.roblox.com/communities/35673180/Momentum-Games-Official#!/about">View Project</a>
-        </div>
+    <div class="below-box">
+        <div class="studio-tag">Momentum Games</div>
+        <a class="portfolio-btn" href="https://www.roblox.com/communities/35673180/Momentum-Games-Official#!/about">View Project</a>
     </div>
 </div>
 
 <!-- ==================== ITEM 2 ====================== -->
 <div class="portfolio-item">
-    <div class="pentagon">CrystalForge Studio → Commissions</div>
-
     <div class="image-box">
         <img src="3-859914c6.png">
     </div>
@@ -191,18 +168,14 @@
         Worked on Find A Brainrot & Steal An Accessory. Scripting, polishing, core functions.
     </div>
 
-    <div class="studio-box">
-        CrystalForge
-        <div class="button-area">
-            <a href="https://www.roblox.com/communities/33321718/CrystalForge-Studio#!/about">View Project</a>
-        </div>
+    <div class="below-box">
+        <div class="studio-tag">CrystalForge</div>
+        <a class="portfolio-btn" href="https://www.roblox.com/communities/33321718/CrystalForge-Studio#!/about">View Project</a>
     </div>
 </div>
 
 <!-- ==================== ITEM 3 ====================== -->
 <div class="portfolio-item">
-    <div class="pentagon">Phone System Challenge</div>
-
     <div class="image-box">
         <img src="1-859914c6.png">
     </div>
@@ -211,18 +184,14 @@
         Custom Roblox Phone System built in 1 hour as a challenge. Press C to open & power button to activate.
     </div>
 
-    <div class="studio-box">
-        Phone System
-        <div class="button-area">
-            <a href="https://www.roblox.com/games/111485566738107/Phone">View Project</a>
-        </div>
+    <div class="below-box">
+        <div class="studio-tag">Phone System</div>
+        <a class="portfolio-btn" href="https://www.roblox.com/games/111485566738107/Phone">View Project</a>
     </div>
 </div>
 
 <!-- ==================== ITEM 4 ====================== -->
 <div class="portfolio-item">
-    <div class="pentagon">Past Little Projects</div>
-
     <div class="image-box">
         <img src="1-859914c6.png">
     </div>
@@ -231,18 +200,14 @@
         Older experimental projects & learning experiences. Includes past studio work.
     </div>
 
-    <div class="studio-box">
-        Misc Projects
-        <div class="button-area">
-            <a href="https://www.roblox.com/users/4248642418/profile">View Project</a>
-        </div>
+    <div class="below-box">
+        <div class="studio-tag">Misc Projects</div>
+        <a class="portfolio-btn" href="https://www.roblox.com/users/4248642418/profile">View Project</a>
     </div>
 </div>
 
 <!-- ==================== ITEM 5 ====================== -->
 <div class="portfolio-item">
-    <div class="pentagon">What I'm Heading For</div>
-
     <div class="image-box">
         <img src="IMAGE5.jpg">
     </div>
@@ -251,11 +216,9 @@
         Heading into bigger team-based projects, planning a large studio, and expanding into community-driven development.
     </div>
 
-    <div class="studio-box">
-        Future Goals
-        <div class="button-area">
-            <a href="https://creations.mtdv.me/giveaways/mopy565328_9">View Project</a>
-        </div>
+    <div class="below-box">
+        <div class="studio-tag">Future Goals</div>
+        <a class="portfolio-btn" href="https://creations.mtdv.me/giveaways/mopy565328_9">View Project</a>
     </div>
 </div>
 
