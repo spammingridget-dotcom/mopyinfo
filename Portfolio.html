@@ -4,17 +4,32 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Scripting Portfolio – Mopy565329</title>
-    <h1> Main acc : mopy565329 | Dev Account : MOPY_UGC</h1>
 
 <style>
     /* GLOBAL */
     body {
         margin: 0;
         font-family: "JetBrains Mono", monospace;
-        background: #0a0a0a url('https://raw.githubusercontent.com/mopy565329/randomhosting/main/codebg.png');
-        background-size: cover;
-        background-attachment: fixed;
+        background: url('Background.png') center/cover no-repeat fixed;
         color: #e8e8e8;
+        position: relative;
+        overflow-x: hidden;
+    }
+
+    /* BLUR + 50% DARK OVERLAY */
+    body::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+
+        background: rgba(0, 0, 0, 0.5); /* 50% transparency */
+        backdrop-filter: blur(14px);
+        -webkit-backdrop-filter: blur(14px);
+
+        z-index: -1;
     }
 
     /* HEADER */
@@ -152,7 +167,6 @@
         I'm Ownership Team And Main Scripter making round systems, heart attacks & core gameplay. (38K members)
     </div>
 
-    <!-- BUTTON + STUDIO NAME MOVED HERE -->
     <div class="bottom-tags">
         <a class="project-btn" href="https://www.roblox.com/communities/35673180/Momentum-Games-Official#!/about">View Project</a>
         <div class="studio-tag">Momentum Games</div>
