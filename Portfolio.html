@@ -3,56 +3,68 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Portfolio – Roblox Scripting</title>
+<title>Scripting Portfolio – Mopy565329</title>
 
 <style>
+    /* GLOBAL */
     body {
         margin: 0;
-        font-family: Consolas, "Segoe UI", sans-serif;
-        background: #020202 url('https://raw.githubusercontent.com/mopy565329/randomhosting/main/codebg.png');
+        font-family: "JetBrains Mono", monospace;
+        background: #0a0a0a url('https://raw.githubusercontent.com/mopy565329/randomhosting/main/codebg.png');
         background-size: cover;
         background-attachment: fixed;
-        color: white;
+        color: #e8e8e8;
     }
 
+    /* HEADER */
     header {
-        width: 100%;
-        padding: 55px 0;
+        padding: 50px 0;
         text-align: center;
-        background: linear-gradient(135deg, #0a0f2e, #001f3f);
-        border-bottom: 1px solid #00eaff55;
-        box-shadow: 0 0 25px #00eaff44;
+        background: rgba(0, 0, 0, 0.7);
+        backdrop-filter: blur(10px);
+        border-bottom: 2px solid #00c3ff;
+        box-shadow: 0 0 25px #009dff66;
     }
 
     header h1 {
-        font-size: 50px;
+        font-size: 46px;
         margin: 0;
-        color: #00eaff;
-        text-shadow: 0 0 18px #00eaff;
-        font-weight: 900;
-        letter-spacing: 3px;
+        font-weight: 800;
+        color: #00c3ff;
+        text-shadow: 0 0 12px #009dff;
     }
 
+    /* PORTFOLIO WRAPPER */
     .portfolio-item {
-        width: 90%;
-        max-width: 1500px;
+        max-width: 1100px;
         margin: 90px auto;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        gap: 30px;
+        padding: 30px;
+        background: rgba(0, 0, 0, 0.55);
+        border: 1px solid #00c3ff33;
+        border-radius: 16px;
+        backdrop-filter: blur(8px);
+        box-shadow: 0 0 25px #00c3ff22;
+        animation: fadeIn 0.6s ease-out;
+        display: grid;
+        grid-template-columns: 45% 55%;
+        gap: 25px;
         position: relative;
     }
 
-    /* LEFT IMAGE BOX */
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* IMAGE BOX */
     .image-box {
-        width: 45%;
+        width: 100%;
         height: 330px;
-        background: #5a11ff;
-        border-radius: 25px;
-        box-shadow: 0 0 25px #7f2affaa;
+        background: rgba(15, 15, 15, 0.8);
+        border-radius: 14px;
+        border: 1px solid #00aaff33;
         overflow: hidden;
-        border: 1px solid #a46bff66;
+        box-shadow: inset 0 0 20px #00c3ff22;
     }
 
     .image-box img {
@@ -61,62 +73,61 @@
         object-fit: cover;
     }
 
-    /* RIGHT DESCRIPTION BOX */
+    /* DESCRIPTION BOX */
     .desc-box {
-        width: 55%;
-        height: 330px;
-        background: #4ef1ff;
-        border-radius: 25px;
-        padding: 35px;
-        color: black;
+        background: rgba(0, 0, 0, 0.55);
+        border: 1px solid #00c3ff33;
+        border-radius: 14px;
+        padding: 25px;
+        font-size: 18px;
+        color: #aeeaff;
         display: flex;
         justify-content: center;
         align-items: center;
-        font-size: 20px;
         text-align: center;
-        box-shadow: 0 0 25px #00eaff88;
+        line-height: 1.6;
+        box-shadow: inset 0 0 20px #00c3ff11;
     }
 
-    /* STUDIO NAME */
+    /* TAG */
     .studio-tag {
         position: absolute;
         right: 30px;
-        bottom: -50px;
+        bottom: -55px;
         padding: 12px 25px;
-        background: #d66bff;
-        border-radius: 50px;
-        font-weight: bold;
-        text-align: center;
+        background: #00c3ff;
         color: black;
-        box-shadow: 0 0 12px #d66bffcc;
+        font-weight: bold;
+        border-radius: 50px;
+        box-shadow: 0 0 12px #00c3ffcc;
     }
 
-    /* BUTTON UNDER STUDIO TAG */
+    /* BUTTON */
     .project-btn {
         position: absolute;
         right: 30px;
-        bottom: -98px;
-        padding: 10px 22px;
-        background: #00eaff;
+        bottom: -100px;
+        padding: 10px 25px;
+        background: #00c3ff;
         color: black;
-        border-radius: 10px;
+        border-radius: 12px;
         font-weight: bold;
         text-decoration: none;
-        box-shadow: 0 0 18px #00eaff;
-        transition: 0.2s;
+        box-shadow: 0 0 18px #00c3ff;
+        transition: 0.25s;
     }
 
     .project-btn:hover {
-        background: #00c8d6;
-        box-shadow: 0 0 25px #00eaff;
+        background: #0099dd;
+        box-shadow: 0 0 25px #00c3ff;
     }
 
+    /* FOOTER */
     footer {
         text-align: center;
         padding: 40px;
-        margin-top: 120px;
-        opacity: 0.7;
-        font-size: 16px;
+        margin-top: 140px;
+        color: #888;
     }
 </style>
 </head>
@@ -124,7 +135,7 @@
 <body>
 
 <header>
-    <h1>My Scripting Portfolio</h1>
+    <h1>Scripting Portfolio</h1>
 </header>
 
 <!-- ITEM 1 -->
