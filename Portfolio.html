@@ -34,7 +34,7 @@
         text-shadow: 0 0 12px #009dff;
     }
 
-    /* PORTFOLIO WRAPPER */
+    /* PORTFOLIO ITEM */
     .portfolio-item {
         max-width: 1100px;
         margin: 90px auto;
@@ -89,24 +89,18 @@
         box-shadow: inset 0 0 20px #00c3ff11;
     }
 
-    /* TAG */
-    .studio-tag {
+    /* BOTTOM TAGS CONTAINER */
+    .bottom-tags {
         position: absolute;
+        bottom: -90px;
         right: 30px;
-        bottom: -55px;
-        padding: 12px 25px;
-        background: #00c3ff;
-        color: black;
-        font-weight: bold;
-        border-radius: 50px;
-        box-shadow: 0 0 12px #00c3ffcc;
+        display: flex;
+        gap: 15px;
+        align-items: center;
     }
 
-    /* BUTTON */
+    /* VIEW PROJECT BUTTON */
     .project-btn {
-        position: absolute;
-        right: 30px;
-        bottom: -100px;
         padding: 10px 25px;
         background: #00c3ff;
         color: black;
@@ -120,6 +114,16 @@
     .project-btn:hover {
         background: #0099dd;
         box-shadow: 0 0 25px #00c3ff;
+    }
+
+    /* STUDIO TAG */
+    .studio-tag {
+        padding: 12px 25px;
+        background: #00c3ff;
+        color: black;
+        border-radius: 50px;
+        font-weight: bold;
+        box-shadow: 0 0 12px #00c3ffcc;
     }
 
     /* FOOTER */
@@ -146,8 +150,12 @@
     <div class="desc-box">
         I'm Ownership Team And Main Scripter making round systems, heart attacks & core gameplay. (38K members)
     </div>
-    <div class="studio-tag">Momentum Games</div>
-    <a class="project-btn" href="https://www.roblox.com/communities/35673180/Momentum-Games-Official#!/about">View Project</a>
+
+    <!-- BUTTON + STUDIO NAME MOVED HERE -->
+    <div class="bottom-tags">
+        <a class="project-btn" href="https://www.roblox.com/communities/35673180/Momentum-Games-Official#!/about">View Project</a>
+        <div class="studio-tag">Momentum Games</div>
+    </div>
 </div>
 
 <!-- ITEM 2 -->
@@ -158,8 +166,11 @@
     <div class="desc-box">
         Worked on Find A Brainrot & Steal An Accessory. Scripting, logic structures & systems.
     </div>
-    <div class="studio-tag">CrystalForge Studio</div>
-    <a class="project-btn" href="https://www.roblox.com/communities/33321718/CrystalForge-Studio#!/about">View Project</a>
+
+    <div class="bottom-tags">
+        <a class="project-btn" href="https://www.roblox.com/communities/33321718/CrystalForge-Studio#!/about">View Project</a>
+        <div class="studio-tag">CrystalForge Studio</div>
+    </div>
 </div>
 
 <!-- ITEM 3 -->
@@ -170,8 +181,11 @@
     <div class="desc-box">
         Phone System made in 1 hour as a challenge. Press C to open, power button to turn on.
     </div>
-    <div class="studio-tag">Phone System</div>
-    <a class="project-btn" href="https://www.roblox.com/games/111485566738107/Phone">View Project</a>
+
+    <div class="bottom-tags">
+        <a class="project-btn" href="https://www.roblox.com/games/111485566738107/Phone">View Project</a>
+        <div class="studio-tag">Phone System</div>
+    </div>
 </div>
 
 <!-- ITEM 4 -->
@@ -182,8 +196,11 @@
     <div class="desc-box">
         Older experimenting projects & early studio work. Learning foundations.
     </div>
-    <div class="studio-tag">Misc Projects</div>
-    <a class="project-btn" href="https://www.roblox.com/users/4248642418/profile">View Project</a>
+
+    <div class="bottom-tags">
+        <a class="project-btn" href="https://www.roblox.com/users/4248642418/profile">View Project</a>
+        <div class="studio-tag">Misc Projects</div>
+    </div>
 </div>
 
 <!-- ITEM 5 -->
@@ -194,8 +211,11 @@
     <div class="desc-box">
         Heading toward bigger projects, team development & building my own studio.
     </div>
-    <div class="studio-tag">Future Goals</div>
-    <a class="project-btn" href="https://creations.mtdv.me/giveaways/mopy565328_9">View Project</a>
+
+    <div class="bottom-tags">
+        <a class="project-btn" href="https://creations.mtdv.me/giveaways/mopy565328_9">View Project</a>
+        <div class="studio-tag">Future Goals</div>
+    </div>
 </div>
 
 <footer>
