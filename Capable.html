@@ -1,1 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>My Capabilities — Mopy565329</title>
+
+<style>
+    body {
+        margin: 0;
+        font-family: "JetBrains Mono", monospace;
+        background: url('Background.jpg') center/cover no-repeat fixed;
+        color: #e8e8e8;
+        position: relative;
+    }
+
+    body::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(14px);
+        -webkit-backdrop-filter: blur(14px);
+        z-index: -1;
+    }
+
+    header {
+        padding: 50px 0;
+        text-align: center;
+        background: rgba(0, 0, 0, 0.7);
+        backdrop-filter: blur(10px);
+        border-bottom: 2px solid #00c3ff;
+        box-shadow: 0 0 25px #009dff66;
+    }
+
+    header h1 {
+        font-size: 46px;
+        margin: 0;
+        font-weight: 800;
+        color: #00c3ff;
+        text-shadow: 0 0 12px #009dff;
+    }
+
+    header p {
+        opacity: 0.85;
+        font-size: 18px;
+        margin-top: 8px;
+        color: #8cd8ff;
+    }
+
+    .section {
+        max-width: 1100px;
+        margin: 70px auto;
+        padding: 20px 30px;
+        background: rgba(0, 0, 0, 0.55);
+        border: 1px solid #00c3ff33;
+        border-radius: 14px;
+        backdrop-filter: blur(8px);
+        box-shadow: 0 0 25px #00c3ff22;
+    }
+
+    .section h2 {
+        font-size: 32px;
+        color: #00d4ff;
+        margin-bottom: 20px;
+        text-shadow: 0 0 10px #009aff;
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+        gap: 35px;
+        margin-top: 35px;
+    }
+
+    .card {
+        background: rgba(15, 15, 15, 0.8);
+        border: 1px solid #00aaff33;
+        border-radius: 12px;
+        padding: 25px;
+        color: #e0e0e0;
+        transition: 0.3s;
+        position: relative;
+        overflow: hidden;
+        box-shadow: inset 0 0 20px #00c3ff22;
+    }
+
+    .card::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: inherit;
+        padding: 2px;
+        background: linear-gradient(135deg, #00d4ff, #0066ff);
+        -webkit-mask:
+            linear-gradient(#fff 0 0) content-box,
+            linear-gradient(#fff 0 0);
+        -webkit-mask-composite: xor;
+                mask-composite: exclude;
+        opacity: 0;
+        transition: 0.35s;
+    }
+
+    .card:hover::before {
+        opacity: 1;
+    }
+
+    .card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 0 25px #009dff55;
+    }
+
+    .card h3 {
+        color: #00c3ff;
+        margin-bottom: 10px;
+        font-size: 24px;
+        text-shadow: 0 0 10px #009aff;
+    }
+
+    .card ul {
+        list-style: none;
+        padding-left: 0;
+        margin-top: 15px;
+    }
+
+    .card ul li {
+        margin: 6px 0;
+        color: #8cd8ff;
+    }
+
+    footer {
+        text-align: center;
+        padding: 40px;
+        color: #888;
+        margin-top: 80px;
+    }
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>My Capabilities</h1>
+    <p>What I Can Do • Roblox Developer & Scripter</p>
+</header>
+
+<section class="section">
+    <h2>What I'm Capable Of</h2>
+
+    <div class="grid">
+        <!-- Scripting Systems -->
+        <div class="card">
+            <h3>Front - end Scripting</h3>
+            <ul>
+                <li>• All kinds of UI</li>
+                <li>• Everything Client - Sided</li>
+                <li>• NPC / Enemy AI</li>
+                <li>• All Kinds of Combat</li>
+                <li>• Tools, Items, Abilities</li>
+                <li>• almost anything Front-end related and much more</li>
+              <li>...</li>
+            </ul>
+        </div>
+
+        <!-- Optimization -->
+        <div class="card">
+            <h3>Back - end Scripting</h3>
+            <ul>
+                <li>• Datastores & Currency/leaderstat systems</li>
+                <li>• lag removal and system cleanup</li>
+                <li>• Pathfinding, Logic, Anti-cheat</li>
+                <li>• almost anything Back-end related and much more</li>
+              <li>...</li>
+            </ul>
+        </div>
+
+        <!-- Video Editing -->
+        <div class="card">
+            <h3>Debugging</h3>
+            <ul>
+                <li>• Debugging advanced systems fast (-400 lines = 24 hours )</li>
+                <li>• Cleaning up spaghetti Code of other people</li>
+                <li>• Explaining code</li>
+                <li>• Debugging at the BEST level</li>
+            </ul>
+        </div>
+
+        <!-- UI & Visual -->
+        <div class="card">
+            <h3> Editing (just started)</h3>
+            <ul>
+                <li>• Game Trailers & Thumbnail design</li>
+                <li>• Little Bit of marketing</li>
+                <li>• Game Icons</li>
+            </ul>
+        </div>
+
+        <!-- General Gameplay -->
+        <div class="card">
+            <h3>Shop</h3>
+          <p> ( I'm working on a free & paid asset shop )</p>
+            <ul>
+                <li>• Free - To - Use starter packs & kits</li>
+                <li>• Datastores (working on ) </li>
+                <li>• GRBW (already made visit shop to download)</li>
+                <li>• More Assets Coming Soon</li>
+            </ul>
+        </div>
+    </div>
+  
+</section>
+
+<footer>
+    © 2025 mopy565329 — All Capabilities Listed
+</footer>
+
+</body>
+</html>
 
