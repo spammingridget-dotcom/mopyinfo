@@ -11,13 +11,13 @@
         font-family: "JetBrains Mono", monospace;
         background: url('Background.jpg') center/cover no-repeat fixed;
         color: #e8e8e8;
-        position: relative;
     }
+
     body::before {
         content: "";
         position: fixed;
         inset: 0;
-        background: rgba(0,0,0,0.5);
+        background: rgba(0, 0, 0, 0.55);
         backdrop-filter: blur(14px);
         z-index: -1;
     }
@@ -27,7 +27,7 @@
         text-align: center;
         background: rgba(0,0,0,0.7);
         border-bottom: 2px solid #00c3ff;
-        box-shadow: 0 0 25px #009dff66;
+        box-shadow: 0 0 20px #009dff88;
     }
 
     header h1 {
@@ -35,61 +35,44 @@
         margin: 0;
         font-weight: 800;
         color: #00c3ff;
-    }
-
-    header p {
-        color: #8cd8ff;
-        opacity: 0.85;
+        text-shadow: 0 0 12px #009dff;
     }
 
     .section {
         max-width: 1100px;
-        margin: 70px auto;
-        padding: 25px 35px;
+        margin: 60px auto;
+        padding: 30px;
+        border-radius: 14px;
         background: rgba(0,0,0,0.55);
         border: 1px solid #00c3ff33;
-        border-radius: 14px;
-        box-shadow: 0 0 25px #00c3ff22;
+        backdrop-filter: blur(10px);
+        box-shadow: 0 0 25px #00c3ff33;
     }
 
-    .section h2 {
-        font-size: 32px;
+    h2 {
         color: #00d4ff;
-        margin-bottom: 20px;
+        text-shadow: 0 0 10px #00aaff;
     }
 
-    .list {
-        margin-top: 25px;
+    pre {
+        background: rgba(15,15,15,0.8);
+        border: 1px solid #00aaff33;
+        padding: 20px;
+        border-radius: 12px;
+        white-space: pre-wrap;
+        box-shadow: 0 0 15px #009dff33 inset;
     }
 
-    .list li {
-        margin: 10px 0;
-        font-size: 18px;
-        color: #8cd8ff;
-    }
-
-    .btn {
+    a.btn {
         display: inline-block;
-        padding: 14px 28px;
         background: #00c3ff;
-        color: black;
-        font-weight: bold;
-        text-decoration: none;
+        padding: 12px 26px;
         border-radius: 10px;
+        font-weight: bold;
+        margin: 10px;
+        color: black;
+        text-decoration: none;
         box-shadow: 0 0 15px #00c3ff88;
-        transition: 0.25s;
-        margin-right: 10px;
-    }
-    .btn:hover {
-        background: #0099dd;
-        box-shadow: 0 0 25px #00c3ff;
-    }
-
-    footer {
-        text-align: center;
-        padding: 40px;
-        color: #888;
-        margin-top: 80px;
     }
 </style>
 </head>
@@ -98,27 +81,54 @@
 
 <header>
     <h1>Front-End Portfolio</h1>
-    <p>Client Systems • UI • Combat • Visual Logic</p>
 </header>
 
 <section class="section">
-    <h2>My Front-End Work</h2>
+<h2>Advanced UI Controller Script</h2>
 
-    <ul class="list">
-        <li>• Custom UI libraries (inventory, shops, dialogue, menus)</li>
-        <li>• Advanced combat systems (hitboxes, prediction, FX)</li>
-        <li>• Tool systems (abilities, cooldowns, combo logic)</li>
-        <li>• NPC behaviour & AI movement logic</li>
-        <li>• Fully animated effects (tweens, beams, particles)</li>
-        <li>• Client optimization, fast modules, clean structure</li>
-    </ul>
+<pre><code>```lua
+local Signal = {}
+Signal.__index = Signal
+function Signal.new()
+    return setmetatable({ _binds = {} }, Signal)
+end
+function Signal:Connect(fn)
+    table.insert(self._binds, fn)
+end
+function Signal:Fire(...)
+    for _, fn in ipairs(self._binds) do fn(...) end
+end
 
-    <br><br>
-    <a class="btn" href="index.html">Back Home</a>
-    <a class="btn" href="Capable.html">Back</a>
+local UIController = {}
+UIController.__index = UIController
+
+function UIController.new(root)
+    return setmetatable({
+        root = root,
+        state = false,
+        changed = Signal.new()
+    }, UIController)
+end
+
+function UIController:Set(state)
+    self.state = state
+    self.changed:Fire(state)
+end
+
+local obj = UIController.new(script.Parent)
+
+obj.changed:Connect(function(active)
+    obj.root.Frame.BackgroundTransparency = active and .15 or .55
+end)
+
+obj.root.Frame.MouseButton1Click:Connect(function()
+    obj:Set(not obj.state)
+end)
+```</code></pre>
+
+<a class="btn" href="Capable.html">Back</a>
+<a class="btn" href="index.html">Home</a>
+
 </section>
-
-<footer>© 2025 mopy565329</footer>
-
 </body>
 </html>
