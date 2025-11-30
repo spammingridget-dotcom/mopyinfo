@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Front-End Portfolio — Mopy565329</title>
+<title>Front-End Scripting — Mopy565329</title>
 
 <style>
     body {
@@ -12,67 +12,58 @@
         background: url('Background.jpg') center/cover no-repeat fixed;
         color: #e8e8e8;
     }
-
     body::before {
         content: "";
         position: fixed;
         inset: 0;
-        background: rgba(0, 0, 0, 0.55);
+        background: rgba(0,0,0,0.5);
         backdrop-filter: blur(14px);
         z-index: -1;
     }
-
     header {
         padding: 50px 0;
         text-align: center;
         background: rgba(0,0,0,0.7);
         border-bottom: 2px solid #00c3ff;
-        box-shadow: 0 0 20px #009dff88;
+        box-shadow: 0 0 25px #009dff66;
     }
-
     header h1 {
         font-size: 46px;
-        margin: 0;
-        font-weight: 800;
         color: #00c3ff;
-        text-shadow: 0 0 12px #009dff;
+        margin: 0;
     }
-
     .section {
         max-width: 1100px;
-        margin: 60px auto;
+        margin: 70px auto;
         padding: 30px;
-        border-radius: 14px;
         background: rgba(0,0,0,0.55);
+        border-radius: 14px;
         border: 1px solid #00c3ff33;
-        backdrop-filter: blur(10px);
-        box-shadow: 0 0 25px #00c3ff33;
     }
-
-    h2 {
+    .section h2 {
+        font-size: 32px;
         color: #00d4ff;
-        text-shadow: 0 0 10px #00aaff;
+        margin-bottom: 20px;
     }
-
-    pre {
-        background: rgba(15,15,15,0.8);
-        border: 1px solid #00aaff33;
+    .codebox {
+        white-space: pre-wrap;
+        background: rgba(15,15,15,0.9);
+        border: 1px solid #00aaff44;
         padding: 20px;
         border-radius: 12px;
-        white-space: pre-wrap;
-        box-shadow: 0 0 15px #009dff33 inset;
+        margin-top: 30px;
+        font-size: 14px;
+        overflow-x: auto;
     }
-
-    a.btn {
+    .btn {
         display: inline-block;
+        margin-top: 30px;
+        padding: 14px 28px;
         background: #00c3ff;
-        padding: 12px 26px;
-        border-radius: 10px;
-        font-weight: bold;
-        margin: 10px;
         color: black;
+        font-weight: bold;
         text-decoration: none;
-        box-shadow: 0 0 15px #00c3ff88;
+        border-radius: 10px;
     }
 </style>
 </head>
@@ -80,55 +71,91 @@
 <body>
 
 <header>
-    <h1>Front-End Portfolio</h1>
+    <h1>Front-End Scripting</h1>
+    <p>UI • Client Logic • Effects • Smooth Systems</p>
 </header>
 
 <section class="section">
-<h2>Advanced UI Controller Script</h2>
+    <h2>What I Can Do</h2>
+    <ul>
+        <li>• All kinds of UI</li>
+        <li>• Everything Client-Sided</li>
+        <li>• NPC / Enemy AI</li>
+        <li>• All Kinds of Combat</li>
+        <li>• Tools, Items, Abilities</li>
+        <li>• Almost anything Front-end related and much more</li>
+    </ul>
 
-<pre><code>```lua
-local Signal = {}
-Signal.__index = Signal
-function Signal.new()
-    return setmetatable({ _binds = {} }, Signal)
-end
-function Signal:Connect(fn)
-    table.insert(self._binds, fn)
-end
-function Signal:Fire(...)
-    for _, fn in ipairs(self._binds) do fn(...) end
+    <h2>Advanced Example — Reactive UI Runtime (OOP + CPE)</h2>
+    <div class="codebox"><code>```lua
+--!strict
+local Signal = require(game.ReplicatedStorage.Packages.Signal)
+
+local State = {}
+State.__index = State
+
+function State.new<T>(initial: T)
+    local self = setmetatable({}, State)
+    self.value = initial
+    self.changed = Signal.new()
+    return self
 end
 
-local UIController = {}
-UIController.__index = UIController
+function State:set(v)
+    if v ~= self.value then
+        self.value = v
+        self.changed:Fire(v)
+    end
+end
 
-function UIController.new(root)
+function State:get()
+    return self.value
+end
+
+-------------------------------------------------------
+
+local Runtime = {}
+Runtime.__index = Runtime
+
+function Runtime.new()
     return setmetatable({
-        root = root,
-        state = false,
-        changed = Signal.new()
-    }, UIController)
+        bindings = {},
+        mounted = false,
+    }, Runtime)
 end
 
-function UIController:Set(state)
-    self.state = state
-    self.changed:Fire(state)
+function Runtime:bind(state, guiObj, property)
+    table.insert(self.bindings, state.changed:Connect(function(v)
+        guiObj[property] = v
+    end))
+    guiObj[property] = state:get()
 end
 
-local obj = UIController.new(script.Parent)
+function Runtime:mount()
+    self.mounted = true
+end
 
-obj.changed:Connect(function(active)
-    obj.root.Frame.BackgroundTransparency = active and .15 or .55
+-------------------------------------------------------
+
+-- usage
+local runtime = Runtime.new()
+local HealthState = State.new(100)
+
+local frame = script.Parent.Frame
+runtime:bind(HealthState, frame, "BackgroundTransparency")
+
+runtime:mount()
+
+task.spawn(function()
+    while true do
+        HealthState:set(math.random())
+        task.wait(0.1)
+    end
 end)
+```</code></div>
 
-obj.root.Frame.MouseButton1Click:Connect(function()
-    obj:Set(not obj.state)
-end)
-```</code></pre>
-
-<a class="btn" href="Capable.html">Back</a>
-<a class="btn" href="index.html">Home</a>
-
+    <a href="Capable.html" class="btn">← Back</a>
 </section>
+
 </body>
 </html>
