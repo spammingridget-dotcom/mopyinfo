@@ -32,62 +32,10 @@
 
 <header>
     <h1>Editing Portfolio</h1>
+    <p> I'm starting on video editing, if you'd like a editing service, contact me ! </p>
 </header>
 
 <section class="section">
-
-<h2>Advanced Tween Pipeline (Animation Bus)</h2>
-
-<pre><code>```lua
-local TweenService = game:GetService("TweenService")
-
-local Style = {}
-Style.__index = Style
-function Style.new(props)
-    return setmetatable(props or {}, Style)
-end
-
-local Pipeline = {}
-Pipeline.__index = Pipeline
-
-function Pipeline.new(target)
-    return setmetatable({
-        target = target,
-        queue = {},
-        running = false
-    }, Pipeline)
-end
-
-function Pipeline:Push(style, dur, easing)
-    table.insert(self.queue, {
-        info = TweenInfo.new(dur, easing or Enum.EasingStyle.Quint),
-        style = style
-    })
-end
-
-function Pipeline:Run()
-    if self.running then return end
-    self.running = true
-
-    for _, step in ipairs(self.queue) do
-        local t = TweenService:Create(self.target, step.info, step.style)
-        t:Play()
-        t.Completed:Wait()
-    end
-
-    self.running = false
-end
-
-local s1 = Style.new({ Transparency = .4, Size = Vector3.new(7,1,7) })
-local s2 = Style.new({ Transparency = 0, Size = Vector3.new(12,1,12) })
-
-local pipe = Pipeline.new(workspace.Part)
-pipe:Push(s1, 1)
-pipe:Push(s2, 1.5)
-
-pipe:Run()
-```</code></pre>
-
 <a class="btn" href="Capable.html">Back</a>
 <a class="btn" href="index.html">Home</a>
 
