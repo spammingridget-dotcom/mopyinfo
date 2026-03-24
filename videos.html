@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Mopy565329 Video Portfolio</title>
+
+<style>
+html, body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: "JetBrains Mono", monospace;
+    background: url('Background.jpg') center/cover no-repeat fixed;
+    color: #e8e8e8;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* overlay */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    backdrop-filter: blur(14px);
+    z-index: -1;
+}
+
+/* header */
+header {
+    padding: 50px 0;
+    text-align: center;
+    background: rgba(0,0,0,0.7);
+    border-bottom: 2px solid #00c3ff;
+    box-shadow: 0 0 25px #009dff66;
+}
+
+header h1 {
+    font-size: 46px;
+    color: #00c3ff;
+    text-shadow: 0 0 12px #009dff;
+    margin: 0;
+}
+
+header p {
+    color: #8cd8ff;
+    opacity: 0.85;
+}
+
+/* section */
+.section {
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 20px 30px;
+    background: rgba(0,0,0,0.55);
+    border-radius: 14px;
+    border: 1px solid #00c3ff33;
+    box-shadow: 0 0 25px #00c3ff22;
+}
+
+/* grid */
+.videos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+    gap: 35px;
+    margin-top: 30px;
+}
+
+/* card */
+.card {
+    background: rgba(15,15,15,0.85);
+    border-radius: 12px;
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+    transition: 0.3s;
+    box-shadow: inset 0 0 20px #00c3ff22;
+}
+
+/* glow border */
+.card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 2px;
+    background: linear-gradient(135deg, #00d4ff, #0066ff);
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.card:hover::before {
+    opacity: 1;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 0 25px #009dff55;
+}
+
+.card h3 {
+    color: #00c3ff;
+    text-shadow: 0 0 10px #009aff;
+}
+
+/* video responsive */
+.video {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    margin-top: 15px;
+    border-radius: 10px;
+}
+
+.video iframe {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* back button */
+.btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 22px;
+    background: #00c3ff;
+    color: black;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    box-shadow: 0 0 15px #00c3ff88;
+}
+
+.btn:hover {
+    background: #0099dd;
+}
+
+/* footer */
+footer {
+    text-align: center;
+    padding: 40px;
+    color: #888;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>VIDEO SHOWCASES</h1>
+  <h2> (page was implemented march 24th 2026, more video's will release soon) </h2>
+    <p>Systems & Projects by Mopy565329</p>
+</header>
+
+<section class="section">
+
+    <a class="btn" href="index.html">← Back</a>
+
+    <div class="videos">
+
+        <!-- VIDEO 1 -->
+        <div class="card">
+            <h3>Custom Rebirth system </h3>
+            <div class="video">
+                <iframe src="https://www.youtube.com/embed/y3xPS1AkosE?rel=0&modestbranding=1" allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <!-- VIDEO 2 -->
+        <div class="card">
+            <h3>Custom Wheel spinner</h3>
+            <div class="video">
+                <iframe src="https://www.youtube.com/embed/JiCfXE8skhI?rel=0&modestbranding=1" allowfullscreen></iframe>
+            </div>
+        </div>
+
+    
+
+    </div>
+
+</section>
+
+<footer>
+    © mopy565329 — Roblox Scripting
+</footer>
+
+</body>
+</html>
