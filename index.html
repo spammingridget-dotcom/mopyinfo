@@ -136,7 +136,7 @@
         margin-top: 40px;
     }
 
-    /* BUTTONS */
+    /* DEFAULT BUTTON */
     .btn {
         padding: 14px 28px;
         background: #00c3ff;
@@ -153,6 +153,31 @@
         background: #0099dd;
         box-shadow: 0 0 25px #00c3ff;
         transform: translateY(-3px);
+    }
+
+    /* SPECIAL YELLOW BUTTON */
+    .btn-yellow {
+        padding: 16px 32px;
+        background: #ffd000;
+        color: black;
+        font-size: 19px;
+        font-weight: bold;
+        text-decoration: none;
+        border-radius: 12px;
+        transition: 0.25s;
+        box-shadow:
+            0 0 20px #ffd000,
+            0 0 40px #ffd000,
+            0 0 60px #ffea00;
+    }
+
+    .btn-yellow:hover {
+        background: #ffe44d;
+        transform: translateY(-4px);
+        box-shadow:
+            0 0 25px #ffd000,
+            0 0 50px #ffd000,
+            0 0 80px #fff200;
     }
 
     footer {
@@ -198,6 +223,7 @@
     <p>I also work for studios, performing streams of tasks for payment.</p>
 
     <div class="button-container">
+        <a class="btn-yellow" href="https://mopy565329.developmentz.site/phantasticles/home.html">Phantasticles 👀👀</a>
         <a class="btn" href="Apply.html">Apply Now (individual commissions)</a>
         <a class="btn" href="Portfolio.html">Previous Workplaces</a>
         <a class="btn" href="Capable.html">Capabilities</a>
