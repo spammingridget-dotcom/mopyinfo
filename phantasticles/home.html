@@ -14,11 +14,11 @@
     body {
         margin: 0;
         font-family: "JetBrains Mono", monospace;
-
         background: url('Background.jpg') center/cover no-repeat fixed;
         color: #fff7cc;
         position: relative;
         overflow-x: hidden;
+        text-align: center; /* center EVERYTHING by default */
     }
 
     body::before {
@@ -28,7 +28,6 @@
         left: 0;
         width: 100%;
         height: 100%;
-
         background: rgba(0, 0, 0, 0.5);
         backdrop-filter: blur(14px);
         -webkit-backdrop-filter: blur(14px);
@@ -38,13 +37,10 @@
     /* HEADER */
     header {
         padding: 50px 0;
-        text-align: center;
         background: rgba(0, 0, 0, 0.7);
         backdrop-filter: blur(10px);
         border-bottom: 2px solid #ffd000;
         box-shadow: 0 0 25px #ffcc0066;
-        position: relative;
-        z-index: 1;
     }
 
     header h1 {
@@ -64,17 +60,14 @@
 
     /* SECTIONS */
     .section {
-        max-width: 1100px;
+        max-width: 900px;
         margin: 70px auto;
-        padding: 20px 30px;
+        padding: 30px;
         background: rgba(0, 0, 0, 0.55);
         border: 1px solid #ffd00033;
         border-radius: 14px;
         backdrop-filter: blur(8px);
         box-shadow: 0 0 25px #ffd00022;
-        animation: fadeIn 0.6s ease-out;
-        position: relative;
-        z-index: 1;
     }
 
     .section h2 {
@@ -90,37 +83,24 @@
         line-height: 1.5;
     }
 
-    /* CARDS */
+    /* SERVICES GRID CENTERED */
+    .services {
+        display: flex;
+        justify-content: center;
+        margin-top: 30px;
+    }
+
+    /* CARD */
     .card {
+        max-width: 400px;
+        width: 100%;
         background: rgba(15, 15, 15, 0.8);
         border: 1px solid #ffcc0033;
         border-radius: 12px;
         padding: 25px;
         color: #fff7cc;
         transition: 0.3s;
-        position: relative;
-        overflow: hidden;
         box-shadow: inset 0 0 20px #ffd00022;
-    }
-
-    .card::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        border-radius: inherit;
-        padding: 2px;
-        background: linear-gradient(135deg, #ffe066, #ffb300);
-        -webkit-mask:
-            linear-gradient(#fff 0 0) content-box,
-            linear-gradient(#fff 0 0);
-        -webkit-mask-composite: xor;
-                mask-composite: exclude;
-        opacity: 0;
-        transition: 0.35s;
-    }
-
-    .card:hover::before {
-        opacity: 1;
     }
 
     .card:hover {
@@ -130,19 +110,22 @@
 
     .card h3 {
         color: #ffd000;
-        margin-bottom: 10px;
         font-size: 24px;
         text-shadow: 0 0 10px #ffcc00;
     }
 
-    .card ul li {
-        color: #ffe680;
+    /* BUTTON CONTAINER */
+    .button-container {
+        display: flex;
+        flex-direction: column; /* stack buttons */
+        align-items: center;
+        gap: 20px;
+        margin-top: 30px;
     }
 
     /* BUTTONS */
     .btn {
         display: inline-block;
-        margin: 10px 8px;
         padding: 14px 28px;
         background: #ffd000;
         color: black;
@@ -157,6 +140,7 @@
     .btn:hover {
         background: #e6b800;
         box-shadow: 0 0 25px #ffd000;
+        transform: translateY(-3px);
     }
 
     footer {
@@ -164,8 +148,6 @@
         padding: 40px;
         color: #aaa066;
         margin-top: 80px;
-        position: relative;
-        z-index: 1;
     }
 </style>
 </head>
@@ -180,26 +162,29 @@
 
 <section class="section">
     <h2>ABOUT US</h2>
-    <p>Recently, our founder mopy started the SCRIPTING PHANTASTICLES. It are some of the best Roblox scripters in the world United to work on BIG projects together. WRONG, we're not an agency, you can't ask to hire us. We apply to your commisions, the great ones. We bring scripting, joy and teamwork together to make the best scripting team ever.</p><br>
+    <p>
+        Recently, our founder mopy started the SCRIPTING PHANTASTICLES. It are some of the best Roblox scripters in the world united to work on BIG projects together. WRONG, we're not an agency, you can't ask to hire us. We apply to your commissions, the great ones. We bring scripting, joy and teamwork together to make the best scripting team ever.
+    </p>
+
     <div class="services">
         <div class="card">
             <h3>Scripting</h3>
             <h4>We program/script...</h4>
-          <p> We make systems we think needs our time and dedication for fair compensation.</p>
-
+            <p>We make systems we think need our time and dedication for fair compensation.</p>
         </div>
     </div>
 
     <h2>Have an EYE out 👀👀👀</h2>
-    <p>Positions are VERY limited, and we only accept the best off the best. So keep an eye out on our positions page! (linked below)</p>
-<br> <br>
+    <p>Positions are VERY limited, and we only accept the best of the best. Keep an eye on our positions page!</p>
+
     <h2>Wanna Hire us THAT BAD????</h2>
-    <p>You can always try the commision application for mopy himself (mopy565329.Developmentz.site/apply.html) and if he think's it's big enough, you might have a chance.</p>
-    <br>
-    <a class="btn" href="https://mopy.developmentz.site/apply.html">Mopy Application</a> <br>
-     <a class="btn" href="team.html">Our team!</a> <br>
-    <h2> <strong>Applications opening soon:</strong></h2>
-        <a class="btn" href="applications/page.html">Application Page</a> 
+    <p>You can try the commission application for mopy himself. If it's big enough, you might have a chance.</p>
+
+    <div class="button-container">
+        <a class="btn" href="https://mopy.developmentz.site/apply.html">Mopy Application</a>
+        <a class="btn" href="team.html">Our Team</a>
+        <a class="btn" href="applications/page.html">Application Page</a>
+    </div>
 </section>
 
 <footer>
