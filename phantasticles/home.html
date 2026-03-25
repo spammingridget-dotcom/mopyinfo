@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Mopy565329 Scripting Services: Scripting Phantasticles</title>
+
+<style>
+    /* GLOBAL */
+    html, body {
+        height: 100%;
+    }
+
+    body {
+        margin: 0;
+        font-family: "JetBrains Mono", monospace;
+
+        /* Use your Background.png (full-page, fixed) */
+        background: url('Background.jpg') center/cover no-repeat fixed;
+        color: #e8e8e8;
+        position: relative;
+        overflow-x: hidden;
+    }
+
+    /* BLUR + 50% DARK OVERLAY */
+    body::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+
+        /* 50% transparent dark overlay */
+        background: rgba(0, 0, 0, 0.5);
+
+        /* blur the background behind content */
+        backdrop-filter: blur(14px);
+        -webkit-backdrop-filter: blur(14px);
+
+        /* place behind content */
+        z-index: -1;
+    }
+
+    /* HEADER - Terminal Style */
+    header {
+        padding: 50px 0;
+        text-align: center;
+        background: rgba(0, 0, 0, 0.7);
+        backdrop-filter: blur(10px);
+        border-bottom: 2px solid #00c3ff;
+        box-shadow: 0 0 25px #009dff66;
+        position: relative;
+        z-index: 1;
+    }
+
+    header h1 {
+        font-size: 46px;
+        margin: 0;
+        font-weight: 800;
+        color: #00c3ff;
+        text-shadow: 0 0 12px #009dff;
+    }
+
+    header p {
+        opacity: 0.85;
+        font-size: 18px;
+        margin-top: 8px;
+        color: #8cd8ff;
+    }
+
+    /* CODE-SECTIONS */
+    .section {
+        max-width: 1100px;
+        margin: 70px auto;
+        padding: 20px 30px;
+        background: rgba(0, 0, 0, 0.55);
+        border: 1px solid #00c3ff33;
+        border-radius: 14px;
+        backdrop-filter: blur(8px);
+        box-shadow: 0 0 25px #00c3ff22;
+        animation: fadeIn 0.6s ease-out;
+        position: relative;
+        z-index: 1;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    .section h2 {
+        font-size: 32px;
+        color: #00d4ff;
+        margin-bottom: 20px;
+        text-shadow: 0 0 10px #009aff;
+    }
+
+    .section p {
+        font-size: 17px;
+        opacity: 0.9;
+        line-height: 1.5;
+    }
+
+    /* CODE-LIKE CARDS */
+    .services {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+        gap: 35px;
+        margin-top: 35px;
+    }
+
+    .card {
+        background: rgba(15, 15, 15, 0.8);
+        border: 1px solid #00aaff33;
+        border-radius: 12px;
+        padding: 25px;
+        color: #e0e0e0;
+        transition: 0.3s;
+        position: relative;
+        overflow: hidden;
+        box-shadow: inset 0 0 20px #00c3ff22;
+    }
+
+    /* animated border glow */
+    .card::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: inherit;
+        padding: 2px;
+        background: linear-gradient(135deg, #00d4ff, #0066ff);
+        -webkit-mask:
+            linear-gradient(#fff 0 0) content-box,
+            linear-gradient(#fff 0 0);
+        -webkit-mask-composite: xor;
+                mask-composite: exclude;
+        opacity: 0;
+        transition: 0.35s;
+    }
+
+    .card:hover::before {
+        opacity: 1;
+    }
+
+    .card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 0 25px #009dff55;
+    }
+
+    .card h3 {
+        color: #00c3ff;
+        margin-bottom: 10px;
+        font-size: 24px;
+        text-shadow: 0 0 10px #009aff;
+    }
+
+    .card ul {
+        list-style: none;
+        padding-left: 0;
+        margin-top: 15px;
+    }
+
+    .card ul li {
+        margin: 6px 0;
+        color: #8cd8ff;
+    }
+
+    /* BUTTONS */
+    .btn {
+        display: inline-block;
+        margin: 10px 8px;
+        padding: 14px 28px;
+        background: #00c3ff;
+        color: black;
+        font-size: 18px;
+        font-weight: bold;
+        text-decoration: none;
+        border-radius: 10px;
+        transition: 0.25s;
+        box-shadow: 0 0 15px #00c3ff88;
+    }
+
+    .btn:hover {
+        background: #0099dd;
+        box-shadow: 0 0 25px #00c3ff;
+    }
+
+    /* FOOTER */
+    footer {
+        text-align: center;
+        padding: 40px;
+        color: #888;
+        margin-top: 80px;
+        position: relative;
+        z-index: 1;
+    }
+
+    /* small responsive tweaks */
+    @media (max-width: 900px) {
+        .section { margin: 40px 20px; }
+        header { padding: 30px 10px; }
+        .card { padding: 18px; }
+    }
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>the SCRIPTING PHANTASTICLES</h1>
+    <p>Roblox Scripters United</p>
+    <p>( Roblox User: mopy565329 )</p>
+</header>
+
+<section class="section">
+    <h2>ABOUT US</h2>
+    <p>Recently, our founder mopy started the SCRIPTING PHANTASTICLES. It are some of the best Roblox scripters in the world United to work on BIG projects together. WRONG, we're not an agency, you can't ask to hire us. We apply to your commisions, the great ones. We bring scripting, joy and teamwork together to make the best scripting team ever.</p><br>
+    <p> I work professionally on games with studios and I have become generally good at scripting.</p>
+    <div class="services">
+        <div class="card">
+            <h3>Scripting</h3>
+            <h4>We program/script...</h4>
+          <p> We make systems we think needs our time and dedication for fair compensation.</p>
+
+        </div>
+    </div>
+
+    <h2>Have an EYE out 👀👀👀</h2>
+    <p>Positions are VERY limited, and we only accept the best off the best. So keep an eye out on our positions page! (linked below)</p>
+<br> <br>
+    <h2>Wanna Hire us THAT BAD????</h2>
+    <p>You can always try the commision application for mopy himself (mopy565329.Developmentz.site/apply.html) and if he think's it's big enough, you might have a chance.</p>
+    <br>
+    <a class="btn" href="Apply.html">Mopy Application</a> <br>
+     <a class="btn" href="phantasticles/team.html">Our team!</a> <br>
+    <h2> <strong>Applications opening soon:</strong></h2>
+        <a class="btn" href="phantasticles/applications/page.html">Application Page</a> 
+</section>
+
+<footer>
+    © mopy565329 — Roblox Scripting
+</footer>
+
+</body>
+</html>
